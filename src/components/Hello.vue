@@ -1,6 +1,6 @@
 <template>
   <div class='hello-component'>
-
+    <differents-words></differents-words>
   </div>
 </template>
 
@@ -8,9 +8,7 @@
 import DifferentsWords from '@/components/DifferentsWords'
 
 export default {
-  data () {
-
-  },
+  data () { return {} },
   components: {
     DifferentsWords
   }

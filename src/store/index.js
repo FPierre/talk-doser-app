@@ -3,6 +3,10 @@ import Vuex from 'vuex'
 import * as actions from './actions'
 import * as getters from './getters'
 import mutations from './mutations'
+import dates from './modules/dates'
+import days from './modules/days'
+import people from './modules/people'
+import swearwords from './modules/swearwords'
 import words from './modules/words'
 
 Vue.use(Vuex)
@@ -14,6 +18,10 @@ export default new Vuex.Store({
   getters,
   mutations,
   modules: {
+    dates,
+    days,
+    people,
+    swearwords,
     words
   },
   strict: debug

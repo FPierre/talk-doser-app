@@ -1,6 +1,3 @@
-// import talkData from '../../api/talk-data'
-// import * as types from '../mutation-types'
-
 const state = {
   all: []
 }
