@@ -1,5 +1,1 @@
-export const talkData = state => {
-  return {
-    words: state.words
-  }
-}
+// export const words = state => state.words.all

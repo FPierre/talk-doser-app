@@ -3,7 +3,7 @@ const state = {
 }
 
 const getters = {
-  words: state => state.all
+  talk: state => state.all
 }
 
 const actions = {

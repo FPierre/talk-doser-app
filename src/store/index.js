@@ -7,6 +7,7 @@ import dates from './modules/dates'
 import days from './modules/days'
 import people from './modules/people'
 import swearwords from './modules/swearwords'
+import talk from './modules/talk'
 import words from './modules/words'
 
 Vue.use(Vuex)
@@ -22,6 +23,7 @@ export default new Vuex.Store({
     days,
     people,
     swearwords,
+    talk,
     words
   },
   strict: debug

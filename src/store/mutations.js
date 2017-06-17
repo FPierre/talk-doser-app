@@ -6,6 +6,7 @@ export default {
     state.days.all = data.days
     state.people.all = data.people
     state.swearwords.all = data.swearwords
+    state.talk.all = data.talk
     state.words.all = data.words
   }
 }

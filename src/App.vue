@@ -2,8 +2,11 @@
   <div id='app'>
     <header>
       <h1>TalkDoser</h1>
-      <span>Conversation entre {{ peopleList }}</span>
+      <!-- <span>Conversation entre {{ peopleList }}</span> -->
     </header>
+
+    <router-link :to="{ name: 'Talk' }">Talk</router-link>
+    <router-link :to="{ name: 'DifferentsWords' }">Differents Words</router-link>
 
     <main>
       <router-view></router-view>
@@ -14,18 +17,10 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
-  computed: {
-    ...mapGetters([
-      'getPeople'
-    ]),
-    peopleList () {
-      return Object.keys(this.getPeople).join(', ')
-    }
-  },
   created () {
     this.$store.dispatch('getTalkData')
   }
