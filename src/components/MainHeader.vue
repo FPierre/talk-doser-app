@@ -20,8 +20,7 @@ export default {
 
 <style scoped>
 .main-header-component {
-  background-color: #fff;
-  color: #0d3446;
+
 }
 
 h1,

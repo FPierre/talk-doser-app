@@ -38,7 +38,8 @@ body,
 }
 
 #app {
-  color: #d8dfe2;
+  background-color: #003355;
+  color: #fff;
   display: grid;
   font-family: 'Hind', sans-serif;
   font-size: 1rem;
@@ -57,7 +58,6 @@ body,
 }
 
 main {
-  background-color: #003355;
   grid-area: main;
 }
 </style>
