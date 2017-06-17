@@ -3,7 +3,8 @@ const state = {
 }
 
 const getters = {
-  getPeople: state => state.all
+  people: state => state.all,
+  concernedPeople: state => Object.keys(state.all).join(', ')
 }
 
 const actions = {

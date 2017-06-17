@@ -1,9 +1,6 @@
 <template>
   <div id='app'>
-    <header>
-      <h1>TalkDoser</h1>
-      <!-- <span>Conversation entre {{ peopleList }}</span> -->
-    </header>
+    <main-header></main-header>
 
     <main-nav></main-nav>
 
@@ -14,6 +11,7 @@
 </template>
 
 <script>
+import MainHeader from '@/components/MainHeader'
 import MainNav from '@/components/MainNav'
 // import { mapGetters } from 'vuex'
 
@@ -23,6 +21,7 @@ export default {
     this.$store.dispatch('getTalkData')
   },
   components: {
+    MainHeader,
     MainNav
   }
 }
@@ -49,9 +48,7 @@ body,
                        'nav main';
 }
 
-header {
-  background-color: #fff;
-  color: #0d3446;
+.main-header {
   grid-area: header;
 }
 
