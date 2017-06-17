@@ -5,37 +5,48 @@
       <!-- <span>Conversation entre {{ peopleList }}</span> -->
     </header>
 
-    <router-link :to="{ name: 'Talk' }">Talk</router-link>
-    <router-link :to="{ name: 'DifferentsWords' }">Differents Words</router-link>
+    <main-nav></main-nav>
 
     <main>
       <router-view></router-view>
     </main>
-
-    <footer>Footer</footer>
   </div>
 </template>
 
 <script>
+import MainNav from '@/components/MainNav'
 // import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
   created () {
     this.$store.dispatch('getTalkData')
+  },
+  components: {
+    MainNav
   }
 }
 </script>
 
 <style>
-/*#7f9eb2*/
-/*#77919d*/
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  width: 100vw;
+}
 
-body {
-  background-color: #0d3446;
+#app {
   color: #d8dfe2;
-  font-size: 1rem;
+  display: grid;
   font-family: 'Hind', sans-serif;
+  font-size: 1rem;
+  grid-template-rows: 100px auto;
+  grid-template-columns: minmax(150px, 1fr) 9fr;
+  grid-template-areas: 'header header'
+                       'nav main';
 }
 
 header {
@@ -44,20 +55,12 @@ header {
   grid-area: header;
 }
 
+.main-nav-component {
+  grid-area: nav;
+}
+
 main {
+  background-color: #003355;
   grid-area: main;
-}
-
-footer {
-  grid-area: footer;
-}
-
-.container {
-  grid-template-columns: 50px;
-  grid-template-rows: auto;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
 }
 </style>
