@@ -3,7 +3,7 @@ const state = {
 }
 
 const getters = {
-  getSwearWords: state => state.all
+  swearWords: state => state.all
 }
 
 const actions = {

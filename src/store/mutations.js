@@ -5,8 +5,9 @@ export default {
     state.dates.all = data.dates
     state.days.all = data.days
     state.people.all = data.people
-    state.swearwords.all = data.swearwords
-    state.talk.all = data.talk
+    state.swearWords.all = data.swearWords
+    state.talk.wordsCount = data.talk.wordsCount
+    state.talk.lines = data.talk.lines
     state.words.all = data.words
   }
 }

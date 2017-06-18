@@ -1,9 +1,11 @@
 const state = {
-  all: {}
+  wordsCount: 0,
+  lines: []
 }
 
 const getters = {
-  talk: state => state.all
+  talkWordsCount: state => state.wordsCount,
+  talkLines: state => state.lines
 }
 
 const actions = {

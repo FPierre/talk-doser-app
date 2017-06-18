@@ -3,7 +3,7 @@ const state = {
 }
 
 const getters = {
-  getDates: state => state.all
+
 }
 
 const actions = {

@@ -25,12 +25,12 @@ export default {
   computed: {
     ...mapGetters([
       'days',
-      'concernedPeople',
+      'peoplePseudo',
       'pronouncedWords'
     ]),
     peopleTalkDistributionData () {
       return {
-        labels: this.concernedPeople,
+        labels: this.peoplePseudo,
         datasets: [
           {
             data: this.pronouncedWords

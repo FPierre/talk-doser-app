@@ -6,7 +6,7 @@ import mutations from './mutations'
 import dates from './modules/dates'
 import days from './modules/days'
 import people from './modules/people'
-import swearwords from './modules/swearwords'
+import swearWords from './modules/swear-words'
 import talk from './modules/talk'
 import words from './modules/words'
 
@@ -22,7 +22,7 @@ export default new Vuex.Store({
     dates,
     days,
     people,
-    swearwords,
+    swearWords,
     talk,
     words
   },
