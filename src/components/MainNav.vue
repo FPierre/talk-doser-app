@@ -9,11 +9,9 @@
 
 <style scoped>
 .main-nav-component {
-  background-color: #003355;
 }
 
 a {
-  color: #fff;
   text-decoration: none;
 }
 </style>

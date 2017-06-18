@@ -5,24 +5,53 @@
     <main-nav></main-nav>
 
     <main>
-      <router-view></router-view>
+      <!-- <router-view></router-view> -->
+      <week-talk-distribution :chart-data='weekTalkDistributionData' :height='100' :options="{ legend: { display: false } }"></week-talk-distribution>
     </main>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MainHeader from '@/components/MainHeader'
 import MainNav from '@/components/MainNav'
-// import { mapGetters } from 'vuex'
+import WeekTalkDistribution from '@/components/WeekTalkDistribution'
 
 export default {
   name: 'app',
+  computed: {
+    ...mapGetters([
+      'days'
+    ]),
+    weekTalkDistributionData () {
+      return {
+        labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+        datasets: [
+          {
+            label: 'GitHub Commits',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [
+              this.days['Monday'],
+              this.days['Tuesday'],
+              this.days['Wednesday'],
+              this.days['Thursday'],
+              this.days['Friday'],
+              this.days['Saturday'],
+              this.days['Sunday']
+            ]
+          }
+        ]
+      }
+    }
+  },
   created () {
     this.$store.dispatch('getTalkData')
   },
   components: {
     MainHeader,
-    MainNav
+    MainNav,
+    WeekTalkDistribution
   }
 }
 </script>
@@ -38,8 +67,6 @@ body,
 }
 
 #app {
-  background-color: #003355;
-  color: #fff;
   display: grid;
   font-family: 'Hind', sans-serif;
   font-size: 1rem;

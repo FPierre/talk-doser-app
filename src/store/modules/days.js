@@ -3,7 +3,7 @@ const state = {
 }
 
 const getters = {
-  getDays: state => state.all
+  days: state => state.all
 }
 
 const actions = {
