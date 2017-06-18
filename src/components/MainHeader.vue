@@ -2,7 +2,7 @@
   <div class='main-header'>
     <header>
       <h1>TalkDoser</h1>
-      <span>Conversation entre {{ concernedPeople }}</span>
+      <span>Conversation entre {{ displayConcernedPeople }}</span>
     </header>
   </div>
 </template>
@@ -11,9 +11,14 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: mapGetters([
-    'concernedPeople'
-  ])
+  computed: {
+    ...mapGetters([
+      'concernedPeople'
+    ]),
+    displayConcernedPeople () {
+      return this.concernedPeople.join(', ')
+    }
+  }
 }
 </script>
 

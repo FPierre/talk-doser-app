@@ -7,6 +7,7 @@
     <main>
       <!-- <router-view></router-view> -->
       <week-talk-distribution :chart-data='weekTalkDistributionData' :height='100' :options="{ legend: { display: false } }"></week-talk-distribution>
+      <people-talk-distribution :chart-data='peopleTalkDistributionData' :height='100' :options="{ legend: { display: false } }"></people-talk-distribution>
     </main>
   </div>
 </template>
@@ -15,20 +16,33 @@
 import { mapGetters } from 'vuex'
 import MainHeader from '@/components/MainHeader'
 import MainNav from '@/components/MainNav'
+import PeopleTalkDistribution from '@/components/PeopleTalkDistribution'
 import WeekTalkDistribution from '@/components/WeekTalkDistribution'
 
 export default {
   name: 'app',
   computed: {
     ...mapGetters([
-      'days'
+      'days',
+      'concernedPeople',
+      'pronouncedWords'
     ]),
+    peopleTalkDistributionData () {
+      return {
+        labels: this.concernedPeople,
+        datasets: [
+          {
+            data: this.pronouncedWords
+          }
+        ]
+      }
+    },
     weekTalkDistributionData () {
       return {
         labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
         datasets: [
           {
-            label: 'GitHub Commits',
+            label: 'Week talk distribution',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: [
@@ -51,6 +65,7 @@ export default {
   components: {
     MainHeader,
     MainNav,
+    PeopleTalkDistribution,
     WeekTalkDistribution
   }
 }
