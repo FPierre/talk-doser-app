@@ -5,6 +5,9 @@
     <main>
       <!-- <router-view></router-view> -->
 
+      <h2>Mots écrits</h2>
+      <p>{{ talkWordsCount }}</p>
+
       <h2>Distribution des conversations dans la semaine</h2>
       <week-talk-distribution :chart-data='weekTalkDistributionData'></week-talk-distribution>
 
@@ -25,6 +28,7 @@ export default {
   computed: {
     ...mapGetters([
       'days',
+      'talkWordsCount',
       'peoplePseudo',
       'pronouncedWords'
     ]),
