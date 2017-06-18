@@ -8,6 +8,9 @@
       <h2>Mots écrits</h2>
       <span>{{ talkWordsCount }}</span>
 
+      <h2>Jour avec le plus d'échanges</h2>
+      <span>{{ mostSpokenDay.date }} ({{ mostSpokenDay.count }} échanges)</span>
+
       <h2>Distribution des conversations dans la semaine</h2>
       <week-talk-distribution :chart-data='weekTalkDistributionData'></week-talk-distribution>
 
@@ -29,6 +32,7 @@ export default {
     ...mapGetters([
       'days',
       'talkWordsCount',
+      'mostSpokenDay',
       'peoplePseudo',
       'pronouncedWords'
     ]),
