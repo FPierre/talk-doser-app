@@ -4,7 +4,11 @@
 
     <main>
       <!-- <router-view></router-view> -->
+
+      <h2>Distribution des conversations dans la semaine</h2>
       <week-talk-distribution :chart-data='weekTalkDistributionData'></week-talk-distribution>
+
+      <h2>Distribution des conversations par personne</h2>
       <people-talk-distribution :chart-data='peopleTalkDistributionData'></people-talk-distribution>
     </main>
   </div>
@@ -78,7 +82,7 @@ body,
 }
 
 #app {
-  background-color: #37474f; /* blue-grey darken-3 */
+  background-color: #263238; /* blue-grey darken-4 */
   color: #f5f5f5; /* grey lighten-4 */
   display: grid;
   font-family: 'Hind', sans-serif;
