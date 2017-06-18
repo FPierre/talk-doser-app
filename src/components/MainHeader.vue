@@ -26,9 +26,4 @@ export default {
 .main-header-component {
 
 }
-
-h1,
-span {
-  color: #ff6a38;
-}
 </style>

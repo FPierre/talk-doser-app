@@ -1,11 +1,15 @@
 <script>
-import { Bar, mixins } from 'vue-chartjs'
+import { Line, mixins } from 'vue-chartjs'
 
-export default Bar.extend({
+export default Line.extend({
   mixins: [mixins.reactiveProp],
-  props: ['chartData', 'options'],
+  props: ['chartData'],
   mounted () {
-    this.renderChart(this.chartData, this.options)
+    this.renderChart(this.chartData, {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: { display: false }
+    })
   }
 })
 </script>

@@ -2,12 +2,10 @@
   <div id='app'>
     <main-header></main-header>
 
-    <main-nav></main-nav>
-
     <main>
       <!-- <router-view></router-view> -->
-      <week-talk-distribution :chart-data='weekTalkDistributionData' :height='100' :options="{ legend: { display: false } }"></week-talk-distribution>
-      <people-talk-distribution :chart-data='peopleTalkDistributionData' :height='100' :options="{ legend: { display: false } }"></people-talk-distribution>
+      <week-talk-distribution :chart-data='weekTalkDistributionData'></week-talk-distribution>
+      <people-talk-distribution :chart-data='peopleTalkDistributionData'></people-talk-distribution>
     </main>
   </div>
 </template>
@@ -15,7 +13,6 @@
 <script>
 import { mapGetters } from 'vuex'
 import MainHeader from '@/components/MainHeader'
-import MainNav from '@/components/MainNav'
 import PeopleTalkDistribution from '@/components/PeopleTalkDistribution'
 import WeekTalkDistribution from '@/components/WeekTalkDistribution'
 
@@ -64,7 +61,6 @@ export default {
   },
   components: {
     MainHeader,
-    MainNav,
     PeopleTalkDistribution,
     WeekTalkDistribution
   }
@@ -82,13 +78,15 @@ body,
 }
 
 #app {
+  background-color: #37474f; /* blue-grey darken-3 */
+  color: #f5f5f5; /* grey lighten-4 */
   display: grid;
   font-family: 'Hind', sans-serif;
   font-size: 1rem;
   grid-template-rows: 100px auto;
-  grid-template-columns: minmax(150px, 1fr) 9fr;
-  grid-template-areas: 'header header'
-                       'nav main';
+  /*grid-template-columns: minmax(150px, 1fr) 9fr;*/
+  grid-template-areas: 'header'
+                       'main';
 }
 
 .main-header {

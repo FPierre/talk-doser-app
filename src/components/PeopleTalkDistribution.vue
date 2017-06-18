@@ -3,9 +3,13 @@ import { Doughnut, mixins } from 'vue-chartjs'
 
 export default Doughnut.extend({
   mixins: [mixins.reactiveProp],
-  props: ['chartData', 'options'],
+  props: ['chartData'],
   mounted () {
-    this.renderChart(this.chartData, this.options)
+    this.renderChart(this.chartData, {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: { display: false }
+    })
   }
 })
 </script>
