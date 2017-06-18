@@ -4,7 +4,7 @@ const state = {
 
 const getters = {
   people: state => state.all,
-  concernedPeople: state => Object.keys(state.all).join(', ')
+  concernedPeople: state => state.all.map((people) => people.pseudo).join(', ')
 }
 
 const actions = {
