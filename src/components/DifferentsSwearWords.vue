@@ -1,9 +1,7 @@
 <template>
-  <div class='differents-words-component'>
-    <h2>Nombre de mots différents trouvés</h2>
-
+  <div class='differents-swear-words-component'>
     <ol>
-      <li v-for='{ word, count, people } in words'>
+      <li v-for='{ word, count, people } in swearWords'>
         {{ word }} ({{ count }}x)
 
         <span v-for='{ pseudo, line_numbers, count } in people'
@@ -21,6 +19,9 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: mapGetters(['words'])
+  computed: mapGetters(['swearWords'])
 }
 </script>
+
+<style scoped>
+</style>

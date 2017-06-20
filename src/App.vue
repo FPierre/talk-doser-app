@@ -16,6 +16,14 @@
 
       <h2>Distribution des conversations par personne</h2>
       <people-talk-distribution :chart-data='peopleTalkDistributionData'></people-talk-distribution>
+
+      <h2>Mots</h2>
+      <differents-words></differents-words>
+
+      <h2>Mots vulgaires</h2>
+      <differents-swear-words></differents-swear-words>
+
+      <h2>Distribution des vulgarités par personne</h2>
     </main>
   </div>
 </template>
@@ -23,6 +31,8 @@
 <script>
 import { mapGetters } from 'vuex'
 import MainHeader from '@/components/MainHeader'
+import DifferentsWords from '@/components/DifferentsWords'
+import DifferentsSwearWords from '@/components/DifferentsSwearWords'
 import PeopleTalkDistribution from '@/components/PeopleTalkDistribution'
 import WeekTalkDistribution from '@/components/WeekTalkDistribution'
 
@@ -73,6 +83,8 @@ export default {
   },
   components: {
     MainHeader,
+    DifferentsWords,
+    DifferentsSwearWords,
     PeopleTalkDistribution,
     WeekTalkDistribution
   }
